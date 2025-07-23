@@ -30,8 +30,4 @@ export class LoginPagePO {
         await this.loginButton.click();
         await this.page.waitForLoadState('networkidle');
     }
-
-    getDashboardUrl() {
-        return this.urlData.dashboardPage;
-    }
 }
