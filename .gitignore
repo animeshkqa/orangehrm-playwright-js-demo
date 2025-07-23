@@ -1,3 +1,6 @@
+#IDE specific Files
+.idea/
+
 # Node modules
 node_modules/
 
