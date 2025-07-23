@@ -1,0 +1,21 @@
+{
+  "name": "orangehrm-playwright-js-framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --config=config/playwright.config.js",
+    "test:headed": "npx playwright test --headed --config=config/playwright.config.js",
+    "test:report": "npx playwright show-report reports/playwright-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "dotenv": "^17.2.0"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}

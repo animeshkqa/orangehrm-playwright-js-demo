@@ -83,7 +83,7 @@ This project includes predefined scripts in `package.json` for easy test executi
 ### Data-Driven Testing with Excel
 
 Test data is stored in data/sitTestData.xlsx and can be dynamically read into your tests.
-Example: 
+Example:
 
 **`sitTestData.xlsx`**
 | Page Name | URL Path |
