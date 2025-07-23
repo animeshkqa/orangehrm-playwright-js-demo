@@ -14,6 +14,7 @@ your-project/
 ├── config/          # Playwright configuration
 ├── data/            # Excel test data
 ├── pages/           # Page Object classes
+├── reports/         # Different Reports
 ├── tests/           # Test specifications
 ├── utils/           # Utility files (e.g., Excel reader)
 ├── .gitignore
