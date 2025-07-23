@@ -45,7 +45,7 @@ PASSWORD=mypassword
 #### Setup
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/animeshkqa/orangehrm-playwright-js-demo.git](https://github.com/animeshkqa/orangehrm-playwright-js-demo.git)
+    git clone https://github.com/animeshkqa/orangehrm-playwright-js-demo.git
     cd orangehrm-playwright-js-demo
     ```
 
