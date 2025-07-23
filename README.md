@@ -31,8 +31,10 @@ To get started, simply follow these steps:
 2.  Fill the contents of **`.env`** with your actual credentials.
 
 **`.env.example`**
-UDERNAME=myuser
+```text
+USERNAME=myuser
 PASSWORD=mypassword
+```
 
 ### Getting Started
 
