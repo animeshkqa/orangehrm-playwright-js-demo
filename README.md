@@ -33,8 +33,8 @@ To get started, simply follow these steps:
 
 **`.env.example`**
 ```text
-USERNAME=myuser
-PASSWORD=mypassword
+APP_USERNAME=myuser
+APP_PASSWORD=mypassword
 ```
 
 ### Getting Started

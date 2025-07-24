@@ -5,8 +5,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const username = process.env.USERNAME;
-const password = process.env.PASSWORD;
+const username = process.env.APP_USERNAME;
+const password = process.env.APP_PASSWORD;
 
 if (!username || !password) {
     throw new Error('USERNAME and PASSWORD must be set in .env file');
