@@ -8,6 +8,7 @@ export class LoginPagePO {
         this.userbox=page.locator(`//input[@placeholder='Username']`);
         this.passwordbox=page.locator(`//input[@placeholder='Password']`);
         this.loginButton=page.locator(`//button[@type='submit']`);
+        this.invalidCredentialMsg=page.locator(`//p[text()='Invalid credentials']`);
     }
 
     async init() {

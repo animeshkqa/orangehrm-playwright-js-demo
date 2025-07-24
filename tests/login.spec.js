@@ -27,7 +27,7 @@ test.afterEach(async() => {
     await page.close();
 })
 
-test('Home Page URL Check', async()=> {
+test('TC01_LOGIN_pVE Home Page URL Check', async()=> {
     await loginPO.init();
     await dashboardPO.init();
 
@@ -35,4 +35,24 @@ test('Home Page URL Check', async()=> {
     await loginPO.performLogin(username, password);
 
     await expect(page).toHaveURL(dashboardPO.getDashboardUrl(), { timeout: 15000 });
+})
+
+test('TC02_LOGIN_nVE Wrong Credentials Password', async()=> {
+    await loginPO.init();
+    await dashboardPO.init();
+
+    await loginPO.gotoHomePage();
+    await loginPO.performLogin(username, 'RandomPasswordXYZ');
+
+    await expect(loginPO.invalidCredentialMsg).toBeVisible();
+})
+
+test('TC03_LOGIN_nVE Wrong Credentials Complete', async()=> {
+    await loginPO.init();
+    await dashboardPO.init();
+
+    await loginPO.gotoHomePage();
+    await loginPO.performLogin('RandomUser', 'RandomPasswordXYZ');
+
+    await expect(loginPO.invalidCredentialMsg).toBeVisible();
 })
