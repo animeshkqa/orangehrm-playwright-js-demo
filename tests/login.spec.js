@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { LoginPagePO } from "../pages/LoginPagePO.js";
-import { DashboardPagePO } from '../pages/DashboardPagePO.js';
+import { LoginPagePO } from "../pages/loginPagePO.js";
+import { DashboardPagePO } from '../pages/dashboardPagePO.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -20,7 +20,7 @@ test.beforeEach(async({browser}) => {
     const context = await browser.newContext();
     page = await context.newPage();
     loginPO = new LoginPagePO(page);
-    dashboardPO = new DashboardPagePO();
+    dashboardPO = new DashboardPagePO(page);
 })
 
 test.afterEach(async() => {

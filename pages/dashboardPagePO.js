@@ -1,9 +1,11 @@
 import { readKeyValueSheet } from '../utils/readExcel.js';
 
 export class DashboardPagePO {
-    constructor() {
+    constructor(page) {
+        this.page = page;
         this.dataFilePath = './data/sitTestData.xlsx';
         this.urlData = {};
+        this.adminTab = page.locator(`//span[text()='Admin']`);
     }
 
     async init() {
@@ -13,5 +15,9 @@ export class DashboardPagePO {
 
     getDashboardUrl() {
         return this.urlData.dashboardPage;
+    }
+
+    async navigateToAdminPage() {
+        await this.adminTab.click();
     }
 }

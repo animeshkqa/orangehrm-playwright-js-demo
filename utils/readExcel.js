@@ -16,11 +16,57 @@ export async function readKeyValueSheet(filePath, sheetName) {
             const key = row.getCell(1).value;
             const value = row.getCell(2).value;
 
-            if (key && value) {
+            if (key !== null && key !== undefined && value !== null && value !== undefined) {
                 data[key] = value;
             }
         });
         return data;
+    } catch (error) {
+        console.error(`Error reading Excel file: ${error.message}`);
+        throw error;
+    }
+}
+
+export async function readColumnWiseKeyValueSheet(filePath, sheetName) {
+    const workbook = new Workbook();
+    try {
+        await workbook.xlsx.readFile(filePath);
+        const worksheet = workbook.getWorksheet(sheetName);
+
+        if (!worksheet) {
+            throw new Error(`Sheet '${sheetName}' not found in the Excel file.`);
+        }
+
+        const records = [];
+        const keys = [];
+        const maxColumns = worksheet.columnCount;
+
+        worksheet.eachRow((row) => {
+            const key = row.getCell(1).value;
+            if (key !== null && key !== undefined) {
+                keys.push(key);
+            }
+        });
+
+        for (let colIndex = 2; colIndex <= maxColumns; colIndex++) {
+            const record = {};
+            let isRecordEmpty = true;
+
+            worksheet.eachRow((row, rowNumber) => {
+                const key = keys[rowNumber - 1];
+                const value = row.getCell(colIndex).value;
+
+                if (key !== null && key !== undefined && value !== null && value !== undefined) {
+                    record[key] = value;
+                    isRecordEmpty = false;
+                }
+            });
+
+            if (!isRecordEmpty) {
+                records.push(record);
+            }
+        }
+        return records;
     } catch (error) {
         console.error(`Error reading Excel file: ${error.message}`);
         throw error;
