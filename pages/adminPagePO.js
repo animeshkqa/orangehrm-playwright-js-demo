@@ -25,7 +25,7 @@ export class AdminPagePO {
 
     async getListOfUsername() {
         await this.userRecTableRows.first().waitFor({ state: 'visible', timeout: 10000 });
-        await this.page.waitForTimeout(10000);
+        await this.page.waitForLoadState('networkidle');
 
         const unames = [];
         const userNameList = await this.userRecTableRowsUsername.all();
@@ -38,7 +38,7 @@ export class AdminPagePO {
 
     async deleteAddedUser(expectedUsername) {
         await this.userRecTableRows.first().waitFor({ state: 'visible', timeout: 10000 });
-        await this.page.waitForTimeout(10000);
+        await this.page.waitForLoadState('networkidle');
 
         const totalRows = await this.userRecTableRows.count();
 

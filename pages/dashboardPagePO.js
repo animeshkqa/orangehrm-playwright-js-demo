@@ -6,6 +6,7 @@ export class DashboardPagePO {
         this.dataFilePath = './data/sitTestData.xlsx';
         this.urlData = {};
         this.adminTab = page.locator(`//span[text()='Admin']`);
+        this.myInfoTab = page.locator(`//span[text()='My Info']`);
     }
 
     async init() {
@@ -19,5 +20,9 @@ export class DashboardPagePO {
 
     async navigateToAdminPage() {
         await this.adminTab.click();
+    }
+
+    async navigateToMyInfoPage() {
+        await this.myInfoTab.click();
     }
 }
