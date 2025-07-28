@@ -10,7 +10,7 @@ This project provides a robust and scalable end-to-end test automation framework
 
 ### Project Structure
 ```text
-your-project/
+orangehrm-playwright-js-framework/
 ├── config/          # Playwright configuration
 ├── data/            # Excel test data
 ├── pages/           # Page Object classes
@@ -29,7 +29,7 @@ This project uses a `.env` file to manage environment-specific configurations li
 To get started, simply follow these steps:
 
 1.  Create a new file named **`.env`** in the project's root directory.
-2.  Fill the contents of **`.env`** with your actual credentials.
+2.  Fill the contents of **`.env`** with actual credentials.
 
 **`.env.example`**
 ```text
@@ -83,7 +83,7 @@ This project includes predefined scripts in `package.json` for easy test executi
 
 ### Data-Driven Testing with Excel
 
-Test data is stored in data/sitTestData.xlsx and can be dynamically read into your tests.
+Test data is stored in data/sitTestData.xlsx and can be dynamically read into the tests.
 Example:
 
 **`sitTestData.xlsx`**
@@ -92,7 +92,4 @@ Example:
 | `loginPage` | `/web/index.php/auth/login` |
 | `dashboardPage` | `/web/index.php/dashboard/index` |
 
-This data are stored in **`url`** worksheet and can be dynamically fetched to construct full URLs, ensuring your tests are resilient to URL changes. For example, your `gotoHomePage()` function could use this data to navigate to the correct login page.
-
-### Roadmap
-* Add more comprehensive Page Objects and test cases.
+This data are stored in **`url`** worksheet and can be dynamically fetched to construct full URLs, ensuring the tests are resilient to URL changes. For example, `gotoHomePage()` function could use this data to navigate to the correct login page.
